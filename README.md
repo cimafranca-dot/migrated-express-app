@@ -1,29 +1,16 @@
-# Native Node App - Module 2
+# migrated-express-app - Activity 4
 
-A simple To-Do app built using only Node.js `http` module. No Express.
+How many lines of code did you eliminate by migrating to Express?
+> I think it is around 80 lines of code just by migrating to Express
 
-## How to Run
-npm install
-node server.js
-Then open http://localhost:3000
+What was the most surprising thing that Express handled automatically?
+> It is much easier to navigate the code and it doesn't use fs anymore since it uses Express and CORS.
 
-## Reflection Questions
+Why is `express.static()` better than manually using `fs.readFile()`?
+> With `fs.readFile()` I had to code every file one by one and fix errors. With `express.static('public')`, one line is enough to show all my frontend files.
 
-### 1. What was the most "painful" part of building this without a framework?
-The most painful was handling requests manually. Because had to write every statements and manually read files with `fs.readFile`, and set headers myself. I got stuck with `ERR_CONNECTION_REFUSED` because I forgot to add `return;` after `res.end()` and the server crashed. I even spent 3 hours because of it, And you cannot just copy and paste everything.
+If you had to add a PUT route to update a task, how would you write it in Express? (Write a short code snippet.)
+>I dont really know much but i will try to do it on my own next time.
 
-### 2. Why do we need to manually collect "chunks" of data in the POST route?
-Because we need to be articulate it terms of manually collevting a data, it might cause a lots of error if we are not doing it proper;y.
-
-### 3. What HTTP status code did we return when a task was successfully created, and why?
-We returned `201 Created`. `200 OK` is for general success, but `201` is more specific and correct for POST when a new resource is created on the server.
-
-### 4. If you had to add a DELETE route, what would the code look like?
-```javascript
-if (req.url.startsWith('/api/tasks/') && req.method === 'DELETE') {
-  const id = parseInt(req.url.split('/')[3]);
-  tasks.splice(id, 1);
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({ message: 'Deleted' }));
-  return;
-}
+What is one disadvantage of using a framework like Express? (Hint: think about dependencies, learning curve, or abstraction.)
+>> My native app had no `node_modules`, but Express added many files. It also hides how Node really works, so I have to install Express to make it work.
