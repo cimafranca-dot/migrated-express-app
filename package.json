@@ -1,7 +1,7 @@
 {
   "name": "native-node-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple To-Do app built using only Node.js `http` module. No Express.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,5 +10,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cimafranca-dot/native-node-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cimafranca-dot/native-node-app/issues"
+  },
+  "homepage": "https://github.com/cimafranca-dot/native-node-app#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
 }
